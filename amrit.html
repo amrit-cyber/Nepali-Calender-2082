@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Amrit Sapkota — Personal Site</title>
+  <style>
+    :root{
+      --bg:#0f1724; --card:#0b1220; --muted:#94a3b8; --accent:#60a5fa; --glass: rgba(255,255,255,0.04);
+      --radius:14px; --maxw:950px;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; background:linear-gradient(180deg,#071126 0%, #071428 60%); color:#e6eef8; -webkit-font-smoothing:antialiased;
+      display:flex; align-items:center; justify-content:center; padding:36px;
+    }
+    .wrap{width:100%; max-width:var(--maxw);}
+
+    header{display:flex; gap:20px; align-items:center; background:var(--card); padding:18px; border-radius:18px; box-shadow:0 6px 30px rgba(2,6,23,0.6)}
+    .avatar{width:120px; height:120px; border-radius:16px; overflow:hidden; flex:0 0 120px; background:var(--glass); display:flex;align-items:center;justify-content:center}
+    .avatar img{width:100%; height:100%; object-fit:cover; display:block}
+    .intro{flex:1}
+    .name{font-size:20px; font-weight:700; margin:0}
+    .meta{color:var(--muted); margin-top:6px; font-size:13px}
+    .role{display:inline-block; margin-top:8px; padding:6px 10px; background:rgba(255,255,255,0.03); border-radius:999px; font-size:13px}
+
+    main{margin-top:16px; display:grid; grid-template-columns: 1fr 320px; gap:18px}
+    @media (max-width:880px){main{grid-template-columns:1fr} .avatar{width:96px;height:96px;flex:0 0 96px}}
+
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); padding:18px; border-radius:14px}
+    h2{margin:0 0 10px 0}
+    p.small{color:var(--muted); margin:0}
+
+    .grid-2{display:grid; grid-template-columns:1fr 1fr; gap:10px}
+    ul{margin:0; padding-left:18px}
+    .values{display:flex; flex-wrap:wrap; gap:8px}
+    .pill{background:rgba(255,255,255,0.03); padding:8px 10px; border-radius:999px; font-size:13px}
+
+    .contact a{display:inline-block; margin-right:10px; text-decoration:none; color:var(--accent); font-weight:600}
+    .socials a{display:inline-block; margin-right:10px; text-decoration:none;color:var(--muted)}
+
+    footer{margin-top:14px; text-align:center; color:var(--muted); font-size:13px}
+
+    /* small utilities */
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:10px;background:linear-gradient(90deg,rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.03);cursor:pointer;color:var(--accent)}
+    .copy-ok{color:#22c55e;font-weight:700;margin-left:8px}
+
+    /* simple nav */
+    nav{display:flex; gap:8px; margin-left:auto}
+    nav button{background:none;border:none;color:var(--muted);cursor:pointer;padding:6px 10px;border-radius:8px}
+    nav button:hover{color:var(--accent)}
+
+    /* contact form */
+    form{display:flex;flex-direction:column;gap:10px}
+    input,textarea{background:transparent;border:1px solid rgba(255,255,255,0.04);padding:10px;border-radius:10px;color:inherit}
+    textarea{min-height:100px}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="avatar" aria-hidden>
+        <img src="image.jpg" alt="Amrit Sapkota" onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'400\'><rect width=\'100%\' height=\'100%\' fill=\'%230f1724\'/><text x=\'50%\' y=\'50%\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'%23cbd5e1\' font-size=\'24\'>No image.jpg found</text></svg>';"/>
+      </div>
+      <div class="intro">
+        <h1 class="name">Amrit Sapkota</h1>
+        <div class="meta">Chitwan, Nepal • 18 years old</div>
+        <div class="role">Simple designs and functions</div>
+      </div>
+      <nav>
+        <button onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">About</button>
+        <button onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">Services</button>
+        <button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Contact</button>
+      </nav>
+    </header>
+
+    <main>
+      <section>
+        <div class="card" id="about">
+          <h2>About Me</h2>
+          <p class="small">Amrit Sapkota is a resident of Chitwan, Nepal. 18 Years old tech friendly guy.</p>
+
+          <hr style="margin:14px 0;border:none;border-top:1px solid rgba(255,255,255,0.03)">
+
+          <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;justify-content:space-between">
+            <div style="min-width:0">
+              <h3 style="margin:0 0 6px 0">Achievements</h3>
+              <ul>
+                <li>SEE Graduate</li>
+                <li>+2 Graduate</li>
+                <li>Good computer knowledge</li>
+                <li>Word, Excel, PowerPoint</li>
+              </ul>
+            </div>
+            <div style="min-width:160px;text-align:center">
+              <h3 style="margin:0 0 6px 0">Core values</h3>
+              <div class="values">
+                <span class="pill">Transparent</span>
+                <span class="pill">Truth-Driven</span>
+                <span class="pill">Collaborative</span>
+                <span class="pill">Unpretentious</span>
+                <span class="pill">Audacious</span>
+              </div>
+            </div>
+          </div>
+
+          <hr style="margin:14px 0;border:none;border-top:1px solid rgba(255,255,255,0.03)">
+
+          <h3 style="margin:0 0 6px 0">My services</h3>
+          <ul>
+            <li>Content creation</li>
+            <li>Video research</li>
+            <li>AI chat models help and use</li>
+          </ul>
+        </div>
+
+        <div class="card" style="margin-top:12px">
+          <h2>Quick contact</h2>
+          <p class="small contact">Email: <a href="mailto:amritsapkot08@gmail.com">amritsapkot08@gmail.com</a>
+            <button class="btn" onclick="copyEmail()" title="Copy email">Copy</button>
+            <span id="copied" class="copy-ok" style="display:none">Copied ✓</span>
+          </p>
+
+          <div style="margin-top:10px" class="socials">
+            <a href="https://www.facebook.com/amrta.sapakota.130675" target="_blank" rel="noopener">Facebook →</a>
+            <a href="https://www.instagram.com/amritisavid/" target="_blank" rel="noopener">Instagram →</a>
+          </div>
+        </div>
+
+      </section>
+
+      <aside>
+        <div class="card">
+          <h2>Contact & Message</h2>
+          <form id="contactForm" onsubmit="handleSubmit(event)">
+            <input type="text" id="name" placeholder="Your name" required />
+            <input type="email" id="email" placeholder="Your email" required />
+            <textarea id="message" placeholder="Message (no private info)"></textarea>
+            <button type="submit" class="btn">Send (local preview)</button>
+          </form>
+          <p class="small" style="margin-top:8px">This form only previews locally — replace with your backend or mailto link when ready.</p>
+        </div>
+
+        <div class="card" style="margin-top:12px">
+          <h3>Details</h3>
+          <div class="grid-2">
+            <div>
+              <strong>Address</strong>
+              <div class="small">Chitwan, Nepal</div>
+            </div>
+            <div>
+              <strong>Role</strong>
+              <div class="small">Simple designs and functions</div>
+            </div>
+          </div>
+          <hr style="margin:12px 0;border:none;border-top:1px solid rgba(255,255,255,0.03)">
+          <h3>More</h3>
+          <p class="small">Open-source friendly — you can copy this HTML into a single file (index.html) and place your <code>image.jpg</code> alongside it.</p>
+        </div>
+      </aside>
+    </main>
+
+    <footer>
+      © <span id="year"></span> Amrit Sapkota — Built with simple HTML, CSS & JS.
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    function copyEmail(){
+      const email = 'amritsapkot08@gmail.com';
+      navigator.clipboard?.writeText(email).then(()=>{
+        const el = document.getElementById('copied'); el.style.display='inline'; setTimeout(()=>el.style.display='none',2000);
+      }).catch(()=>{
+        alert('Could not copy — please copy manually: '+email);
+      })
+    }
+
+    function handleSubmit(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const msg = document.getElementById('message').value.trim();
+      // preview behavior: open mailto so user can send via their email client
+      const subject = encodeURIComponent('Message from '+name+' via personal site');
+      const body = encodeURIComponent(msg + '\n\n---\nFrom: '+name+' ('+email+')');
+      const mailto = 'mailto:amritsapkot08@gmail.com?subject='+subject+'&body='+body;
+      // open user's mail client
+      window.location.href = mailto;
+    }
+  </script>
+</body>
+</html>
